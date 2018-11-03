@@ -22,7 +22,7 @@ module.exports = function (app) {
    * Friend Routes.
    */
 
-  app.get('/api/friend', function (req, res) {
+  app.post('/api/friend', function (req, res) {
     return friendController.get(req, res);
   });
 
