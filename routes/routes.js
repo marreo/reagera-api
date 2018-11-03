@@ -41,6 +41,9 @@ module.exports = function (app) {
   app.post('/api/user', function (req, res) {
     return userController.create(req, res);
   });
+  app.get('/api/user', function (req, res) {
+    return userController.get(req, res);
+  });
 
   /**
    * Error Handler.

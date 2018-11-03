@@ -1,7 +1,10 @@
 const User = require('../models/User');
 
 exports.get = (req, res) => {
-  res.send('Hello World');
+  return User.find()
+    .then((users) => {
+      res.json(users);
+    });
 };
 exports.search = (req, res) => {
   res.send('Hello World');
