@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
 const relationSchema = new mongoose.Schema({
-  friend1: String,
-  friend2: String,
+  users: [{
+    type: String,
+    ref: "User"
+  }],
   start: Date
 });
 

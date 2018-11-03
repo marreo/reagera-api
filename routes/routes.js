@@ -26,11 +26,7 @@ module.exports = function (app) {
     return friendController.get(req, res);
   });
 
-  app.post('/api/friend/:name', function (req, res) {
-    return friendController.search(req, res);
-  });
-
-  app.post('/api/friend/new', function (req, res) {
+  app.post('/api/friend/create', function (req, res) {
     return friendController.create(req, res);
   });
 
