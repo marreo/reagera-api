@@ -8,21 +8,42 @@ const moment = require('moment');
  * Controllers (route handlers).
  */
 
-const dataController = require('../controllers/data');
+const friendController = require('../controllers/friend');
+const userController = require('../controllers/user');
 
 module.exports = function (app) {
 
   //Home route
   app.get('/', function (req, res) {
-    res.send('Home');
+    res.send('Welcome toZzz the VA API');
   });
 
   /**
-   * API Routes.
+   * Friend Routes.
    */
 
-  app.get('/api/departure', function (req, res) {
-    return dataController.get(req, res);
+  app.get('/api/friend', function (req, res) {
+    return friendController.get(req, res);
+  });
+
+  app.post('/api/friend/:name', function (req, res) {
+    return friendController.search(req, res);
+  });
+
+  app.post('/api/friend/new', function (req, res) {
+    return friendController.create(req, res);
+  });
+
+  app.post('/api/friend/remove', function (req, res) {
+    return friendController.remove(req, res);
+  });
+
+    /**
+   * Friend Routes.
+   */
+
+  app.post('/api/user', function (req, res) {
+    return userController.create(req, res);
   });
 
   /**

@@ -14,7 +14,7 @@
   "license": "",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js -e js --watch controllers --watch routes --watch public",
+    "dev": "nodemon app.js -e js --watch controllers --watch routes",
     "watch": "npm-watch",
     "build": "cross-env webpack --progress --hide-modules --colors --watch"
   },
