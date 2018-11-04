@@ -2,7 +2,9 @@ const Relation = require('../models/Relation');
 
 exports.get = (req, res) => {
   console.log(req.body);
-  return Relation.find({'users': req.body.userid})
+  return Relation.find({
+      'users': req.body.userid
+    })
     .populate("users")
     .then((relations) => {
       var relationUsers = relations.map(a => a.users);

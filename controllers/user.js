@@ -12,7 +12,7 @@ exports.search = (req, res) => {
 exports.create = (req, res) => {
   console.log(req.body);
   var user = new User();
-  user.userId = req.body.userId;
+  user._id = req.body.id;
   user.email = req.body.email;
   user.name = req.body.name;
   return user.save()
