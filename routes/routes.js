@@ -10,6 +10,7 @@ const moment = require('moment');
 
 const friendController = require('../controllers/friend');
 const userController = require('../controllers/user');
+const statusController = require('../controllers/status');
 
 module.exports = function (app) {
 
@@ -34,8 +35,8 @@ module.exports = function (app) {
     return friendController.remove(req, res);
   });
 
-    /**
-   * Friend Routes.
+  /**
+   * User Routes.
    */
 
   app.post('/api/user', function (req, res) {
@@ -43,6 +44,14 @@ module.exports = function (app) {
   });
   app.get('/api/user', function (req, res) {
     return userController.get(req, res);
+  });
+
+  /**
+   * Status Routes.
+   */
+
+  app.post('/api/status', function (req, res) {
+    return statusController.create(req, res);
   });
 
   /**
