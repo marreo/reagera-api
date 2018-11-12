@@ -11,3 +11,14 @@ exports.create = (req, res) => {
       res.status(200).end();
   });
 };
+
+exports.get = (req, res) => {
+  console.log(req.body);
+  return Status.find({
+      'user': '5bddc17e71f0280015ea90e9'
+    })
+    .populate("user")
+    .then((statuses) => {
+        res.json(statuses);
+    });
+  };

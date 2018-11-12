@@ -39,10 +39,10 @@ module.exports = function (app) {
    * User Routes.
    */
 
-  app.post('/api/user', function (req, res) {
+  app.post('/api/user/create', function (req, res) {
     return userController.create(req, res);
   });
-  app.get('/api/user', function (req, res) {
+  app.post('/api/user', function (req, res) {
     return userController.get(req, res);
   });
 
@@ -50,8 +50,11 @@ module.exports = function (app) {
    * Status Routes.
    */
 
-  app.post('/api/status', function (req, res) {
+  app.post('/api/status/create', function (req, res) {
     return statusController.create(req, res);
+  });
+  app.post('/api/status', function (req, res) {
+    return statusController.get(req, res);
   });
 
   /**
